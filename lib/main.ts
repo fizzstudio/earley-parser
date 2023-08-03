@@ -12,7 +12,7 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
-
+/** @public */
 export class Grammar {
   private lhsToRhsList: {[lhs: string]: string[][]};
 
@@ -60,10 +60,12 @@ export class Grammar {
 //------------------------------------------------------------------------------------
 
 let loggingOn = true;
+/** @public */
 export function logging(allow: boolean) {
   loggingOn = allow;
 }
 
+/** @public */
 export class Chart {
   private currentId = 0;
   private idToState: {[id: number]: State} = {};
@@ -160,6 +162,7 @@ function combinations(arrOfArr: ParseTree[][], i: number, stack: ParseTree[], re
   }
 }
 
+/** @public */
 export interface ParseTree {
   root: string | string[];
   left: number;
@@ -167,6 +170,7 @@ export interface ParseTree {
   subtrees?: ParseTree[];
 }
 
+/** @public */
 export class State {
   private id: number;
   private ref: {[j: number]: State}[];
@@ -373,6 +377,7 @@ export class State {
 
 //------------------------------------------------------------------------------------
 
+/** @public */
 export function parse(tokens: string[], grammar: Grammar, rootRule: string) {
   const chart = new Chart(tokens);
   const rootRuleRhss = grammar.getRightHandSides(rootRule);
