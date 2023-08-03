@@ -1,0 +1,49 @@
+{
+  "name": "@fizz/earley-parser",
+  "version": "0.1.0",
+  "description": "Tiny JS Earley parser for context-free languages (Fizz Studio version)",
+  "author": "Yurii Lahodiuk <yura.lagodiuk@gmail.com>",
+  "contributors": [
+    "Josh Fennell <josh@fizz.studio>"
+  ],
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.fizz.studio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizzstudio/earley-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fizzstudio/earley-parser/issues"
+  },
+  "homepage": "https://github.com/fizzstudio/earley-parser#readme",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && api-extractor run --local --verbose",
+    "test": "ava",
+    "pretest": "npm run build",
+    "doc": "api-documenter markdown --input-folder ./temp --output-folder ./docs",
+    "pubpatch": "npm version patch && npm publish",
+    "pubminor": "npm version minor && npm publish",
+    "pubmajor": "npm version major && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/earley-parser.js"
+  },
+  "types": "./dist/earley-parser.d.ts",
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.22.4",
+    "@microsoft/api-extractor": "^7.34.8",
+    "ava": "^5.2.0",
+    "eslint": "^8.40.0",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.6",
+    "@fizz/ui-components": "^0.5.0"
+  }
+}

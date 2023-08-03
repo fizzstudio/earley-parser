@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name='viewport' content='width=device-width'>
+    <title>earley-parser demos</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22green%22/><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            font-weight: 300;
+        }
+
+        section {
+            outline: solid gray 1px;
+            display: block;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        label {
+            display: block;
+        }
+
+        details {
+            outline: solid cornflowerblue 1px;
+            background-color: hsl(219, 48%, 91%);
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        summary {
+            display: flex;
+            gap: 5px;
+            margin-left: -1rem;
+        }
+
+        details>summary::before {
+            content: '+';
+            font-weight: bold;
+        }
+
+        details[open]>summary::before {
+            content: '–' / '';
+            font-weight: bold;
+        }
+
+        summary>.price {
+            margin-left: auto;
+        }
+
+
+        summary>.name {
+            font-weight: bold;
+            /* align-self: flex-start; */
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <script type="module" src="/src/main.ts"></script>
+    <h1>earley-parser</h1>
+    <main>
+      <section id="content-container"></section>
+    </main>  
+</body>
+
+</html>
